@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DapperCrud.Models.Customer>
+
+<a href="/Customer/Create">Add New</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Balance</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Name</td>
+            <td>@c.Mobile</td>
+            <td>@c.Balance</td>
+            <td>
+                <a href="/Customer/Edit/@c.CustomerId">Edit</a> |
+                <a href="/Customer/Delete/@c.CustomerId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
